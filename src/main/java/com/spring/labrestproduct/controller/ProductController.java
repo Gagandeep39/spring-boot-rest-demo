@@ -2,17 +2,17 @@
  * @author Gagandeep Singh
  * @email singh.gagandeep3911@gmail.com
  * @create date 2020-04-09 19:55:24
- * @modify date 2020-04-09 20:23:56
+ * @modify date 2020-04-10 23:15:23
  * @desc Controller containing various product related Get post methods
  */
 package com.spring.labrestproduct.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,8 +20,8 @@ import java.util.List;
 import com.spring.labrestproduct.entity.Product;
 import com.spring.labrestproduct.repository.ProductRepository;
 
-@Controller
-@RestController("/product")
+@RestController
+@RequestMapping(value = "/product")
 public class ProductController {
 
     /**
