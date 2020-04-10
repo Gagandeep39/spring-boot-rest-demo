@@ -69,32 +69,5 @@ public class ProductController {
             return respository.findById(productId);
         }
     }
-    /**
-     * Handle Product Exception
-     * @param ProductNotFoundException Custom Exception thrown when a product is not found
-     * @return Resturns a response object with an Error code
-     */
-    @ExceptionHandler
-    public ResponseEntity<ProductErrorResponse> handleProductNotFound(ProductNotFoundException exception){
-        ProductErrorResponse response = new ProductErrorResponse();
-        response.setStatus(HttpStatus.NOT_FOUND.value());
-        response.setTimeStamp(System.currentTimeMillis());
-        response.setMessage(exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-    }
-
-    /**
-     * @param Exception Handles all kinds of Exception
-     * @return Returns a response object with an Error code
-     * All generic exceptions will be caught by this error handler
-     */
-    @ExceptionHandler
-    public ResponseEntity<ProductErrorResponse> handleAllError(Exception exception){
-        ProductErrorResponse response = new ProductErrorResponse();
-        response.setStatus(HttpStatus.BAD_REQUEST.value());
-        response.setTimeStamp(System.currentTimeMillis());
-        response.setMessage(exception.getMessage());
-        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-    }
-
+    
 }
