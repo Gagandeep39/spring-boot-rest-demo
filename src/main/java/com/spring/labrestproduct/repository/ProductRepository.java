@@ -53,5 +53,12 @@ public class ProductRepository{
         product.setId(products.size()+1);
         products.add(product);
 		return product;
+    }
+    
+    /**
+     * @return Returns a product of specified ID
+     */
+	public Product findById(int productId) {
+		return products.get(productId);
 	}
 }
